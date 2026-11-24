@@ -5,11 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.ogapp.subai.ui.nav.SubAiApp
 import com.ogapp.subai.ui.theme.SubAiTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,17 +16,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            SubAiTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { inner ->
-                    Placeholder(Modifier.padding(inner))
+            // Dark-first: the app is built to be read in a dim garage / car interior.
+            SubAiTheme(darkTheme = true) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    SubAiApp()
                 }
             }
         }
     }
-}
-
-@Composable
-private fun Placeholder(modifier: Modifier = Modifier) {
-    // Replaced by the real navigation graph in a later step.
-    Text(text = "SubAI", modifier = modifier)
 }
