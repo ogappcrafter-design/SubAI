@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base app theme (dependency-free platform parent; Compose drives the real UI). -->
+    <style name="Theme.SubAI" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/carbon_black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Launch theme: solid carbon background so the cold-start frame is on-brand,
+         not a white flash, before the Compose splash animation takes over. -->
+    <style name="Theme.SubAI.Splash" parent="Theme.SubAI">
+        <item name="android:windowBackground">@color/carbon_black</item>
+    </style>
+</resources>

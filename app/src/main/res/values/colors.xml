@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="carbon_black">#0B0E11</color>
+    <color name="carbon_surface">#14181D</color>
+    <color name="amp_amber">#FFB020</color>
+    <color name="bass_cyan">#28E0C8</color>
+    <color name="off_white">#F2F5F8</color>
+    <color name="ic_launcher_background">#0B0E11</color>
+</resources>
