@@ -30,6 +30,7 @@ import com.ogapp.subai.ui.components.InfoRow
 import com.ogapp.subai.ui.components.ScreenScaffold
 import com.ogapp.subai.ui.components.StatusPill
 import com.ogapp.subai.ui.components.SubCard
+import com.ogapp.subai.ui.components.WiringDiagram
 import com.ogapp.subai.ui.theme.AmpAmber
 import com.ogapp.subai.ui.theme.BassCyan
 import com.ogapp.subai.ui.theme.SteelGray
@@ -108,6 +109,8 @@ fun ImpedanceScreen(onBack: () -> Unit) {
                     modifier = Modifier.padding(top = 4.dp, bottom = 6.dp)
                 )
                 Text(m.note, style = MaterialTheme.typography.bodyMedium, color = color)
+                Spacer(Modifier.height(10.dp))
+                WiringDiagram(option = m.option, count = count, coilType = coilType)
             }
         }
         Spacer(Modifier.height(24.dp))
