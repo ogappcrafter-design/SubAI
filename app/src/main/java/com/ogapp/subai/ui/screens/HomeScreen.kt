@@ -12,6 +12,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.ElectricBolt
 import androidx.compose.material.icons.filled.GraphicEq
 import androidx.compose.material.icons.filled.Radio
@@ -63,6 +64,8 @@ fun HomeScreen(onNavigate: (String) -> Unit) {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
+            Tile("AI Photo Diagnosis", "Snap your setup — AI reads it and finds the problem", Icons.Filled.CameraAlt) { onNavigate(Routes.DIAGNOSE) }
+            Gap()
             Tile("Troubleshoot It", "My system isn't working — walk me through it", Icons.Filled.Troubleshoot) { onNavigate(Routes.TROUBLESHOOT) }
             Gap()
             Tile("Impedance / Wiring", "Match your subs' voice coils to your amp safely", Icons.Filled.GraphicEq) { onNavigate(Routes.IMPEDANCE) }

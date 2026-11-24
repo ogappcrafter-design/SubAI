@@ -10,6 +10,7 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import com.ogapp.subai.ui.screens.ChargingScreen
+import com.ogapp.subai.ui.screens.DiagnoseScreen
 import com.ogapp.subai.ui.screens.HarnessScreen
 import com.ogapp.subai.ui.screens.HomeScreen
 import com.ogapp.subai.ui.screens.ImpedanceScreen
@@ -22,6 +23,7 @@ import com.ogapp.subai.ui.screens.TroubleshootScreen
 object Routes {
     const val SPLASH = "splash"
     const val HOME = "home"
+    const val DIAGNOSE = "diagnose"
     const val IMPEDANCE = "impedance"
     const val POWER = "power"
     const val TROUBLESHOOT = "troubleshoot"
@@ -52,6 +54,12 @@ fun SubAiApp() {
         }
         composable(Routes.HOME) {
             HomeScreen(onNavigate = { route -> nav.navigate(route) })
+        }
+        composable(Routes.DIAGNOSE) {
+            DiagnoseScreen(
+                onBack = { nav.popBackStack() },
+                onOpenSettings = { nav.navigate(Routes.SETTINGS) }
+            )
         }
         composable(Routes.IMPEDANCE) { ImpedanceScreen(onBack = { nav.popBackStack() }) }
         composable(Routes.POWER) { PowerScreen(onBack = { nav.popBackStack() }) }
