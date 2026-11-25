@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Get SubAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#0B0E11; --surface:#14181D; --surface-2:#1C222A;
+    --fg:#F2F5F8; --muted:#8A95A5; --line:#2A313B;
+    --amber:#FFB020; --cyan:#28E0C8; --green:#30C85E;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"Inter",system-ui,-apple-system,sans-serif;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:
+      radial-gradient(1200px 500px at 50% -120px, rgba(255,176,32,.10), transparent 60%),
+      var(--bg);
+    color:var(--fg); font-family:var(--body); line-height:1.5;
+    padding-left:max(16px,env(safe-area-inset-left,0px));
+    padding-right:max(16px,env(safe-area-inset-right,0px));
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:calc(env(safe-area-inset-bottom,0px) + 40px);
+  }
+  .wrap{max-width:560px;margin:0 auto;padding-top:28px}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+  .cone{width:88px;height:88px}
+  .wordmark{
+    font-family:var(--display);font-weight:700;font-size:clamp(44px,13vw,62px);
+    letter-spacing:1px;line-height:1;margin:6px 0 0;
+    background:linear-gradient(100deg,var(--amber),var(--cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .tag{font-family:var(--display);font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-size:12px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:22px}
+  h2{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--fg);margin:0 0 4px}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;text-decoration:none;
+    font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.3px;
+    padding:18px 16px;border-radius:14px;text-align:center}
+  .btn-primary{background:linear-gradient(180deg,#3ad36a,#23b254);color:#06220f;
+    box-shadow:0 10px 26px rgba(48,200,94,.28);border:1px solid rgba(255,255,255,.14)}
+  .btn-primary:active{transform:translateY(1px)}
+  .btn-secondary{background:var(--surface-2);color:var(--fg);border:1px solid var(--line);margin-top:12px;font-size:16px}
+  .hint{color:var(--muted);font-size:13px;margin-top:14px}
+  .hint b{color:var(--cyan)}
+  ol{margin:6px 0 0;padding:0;list-style:none;counter-reset:step}
+  li{position:relative;padding-left:40px;margin:0 0 16px;counter-increment:step}
+  li::before{content:counter(step);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:9px;
+    background:linear-gradient(135deg,#6a5cff,#8a5cff);color:#fff;font-family:var(--display);font-weight:700;
+    display:flex;align-items:center;justify-content:center;font-size:14px}
+  li b{color:var(--amber)}
+  .note{background:var(--surface-2);border-radius:12px;padding:14px;margin-top:4px;font-size:14px}
+  .note b{color:var(--cyan)}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}
+  a.plain{color:var(--cyan);word-break:break-all;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <svg class="cone" viewBox="0 0 108 108" aria-hidden="true">
+      <circle cx="54" cy="54" r="30" fill="none" stroke="#FFB020" stroke-width="7"/>
+      <circle cx="54" cy="54" r="13" fill="#1C222A"/>
+      <circle cx="54" cy="54" r="6" fill="#28E0C8"/>
+      <path d="M22 86 L30 86 L35 70 L44 96 L52 78 L60 90 L66 80 L74 86 L86 86"
+            fill="none" stroke="#28E0C8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="wordmark">SubAI</div>
+    <div class="tag">Wire it right. Hit harder.</div>
+  </div>
+
+  <div class="card">
+    <h2>Android</h2>
+    <p class="sub">Latest build &middot; about 2.6&nbsp;MB &middot; Wi-Fi is fastest</p>
+
+    <a class="btn btn-primary" id="chrome"
+       href="intent://ogappcrafter-design.github.io/SubAI/SubAI.apk#Intent;scheme=https;package=com.android.chrome;end">
+       &#8595;&nbsp; Download in Chrome
+    </a>
+    <a class="btn btn-secondary" href="SubAI.apk" download="SubAI.apk">Download here instead</a>
+
+    <p class="hint">The green button hands the download to the real <b>Chrome</b> app. Built-in browsers inside other apps (like the Claude app) can freeze at 100% on files &mdash; Chrome won&rsquo;t.</p>
+  </div>
+
+  <div class="card">
+    <h2>Then install</h2>
+    <ol>
+      <li>Uninstall any old <b>SubAI</b> first (long-press its icon &rarr; Uninstall), if you have one.</li>
+      <li>Wait for the download to say <b>complete</b> &mdash; it&rsquo;s about 2.6&nbsp;MB.</li>
+      <li>Open your phone&rsquo;s <b>Files</b> app &rarr; <b>Downloads</b> &rarr; tap <b>SubAI.apk</b>.</li>
+      <li>Allow <b>install unknown apps</b> if asked, then tap <b>Install</b>.</li>
+    </ol>
+    <div class="note">
+      Still &ldquo;something went wrong&rdquo;? That&rsquo;s <b>Play Protect</b>. Open
+      <b>Play Store &rarr; profile &rarr; Play Protect &rarr; &#9881; &rarr; turn OFF &ldquo;Scan apps with Play Protect&rdquo;</b>,
+      install, then turn it back on.
+    </div>
+  </div>
+
+  <div class="foot">
+    SubAI &middot; your car-audio wiring co-pilot. Not on the Play Store yet &mdash; that&rsquo;s why you install it by hand.<br>
+    Direct link: <a class="plain" href="SubAI.apk">ogappcrafter-design.github.io/SubAI/SubAI.apk</a>
+  </div>
+</div>
+</body>
+</html>
