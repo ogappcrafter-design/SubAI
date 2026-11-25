@@ -6,10 +6,14 @@ amps, LOCs, second batteries and aftermarket head units, with AI photo diagnosis
 ## ‼️ DELIVERY RULE — how to hand the user every build / download
 
 **Always deliver APKs (and any file the user downloads) by uploading to the
-user's Google Drive, then give them the Drive link.** Do NOT rely on the in-chat
-file card for APKs — on their phone (Motorola, Android 16, ThinkShield) that path
-caused "App not installed" / "problem parsing the package" failures. The Drive
-link is the method that works (same as their "Rhythm Riot" app).
+user's Google Drive, then give them the Drive link.** This is the delivery method
+the user chose for SubAI. Do NOT rely on the in-chat file card for APKs — on their
+phone (Motorola, Android 16, ThinkShield) that path caused "App not installed" /
+"problem parsing the package" failures (corrupt/blocked transfers).
+Note: Claude artifacts CANNOT host an APK (archives aren't a served type, and
+page-initiated downloads are blocked), so an in-chat "download page" is not an
+option. A real external host (GitHub Pages, Vercel) would work but needs the user
+to make the repo public or connect the host; Drive avoids all that.
 
 How to do it:
 1. Build the **release** APK (small ~2.6MB, signed): `./gradlew :app:assembleRelease`
