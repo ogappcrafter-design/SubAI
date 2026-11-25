@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.ogapp.subai"
-        minSdk = 26
+        minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -20,14 +20,28 @@ android {
         vectorDrawables { useSupportLibrary = true }
     }
 
+    signingConfigs {
+        // Stable, committed dev signing key so every build Claude produces shares
+        // one signature — sideloaded updates always install over each other.
+        // NOT a production secret; a separate release key is used for Play Store.
+        create("shared") {
+            storeFile = file("subai-debug.keystore")
+            storePassword = "subai123"
+            keyAlias = "subai"
+            keyPassword = "subai123"
+        }
+    }
+
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
             isDebuggable = true
+            signingConfig = signingConfigs.getByName("shared")
         }
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            signingConfig = signingConfigs.getByName("shared")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
