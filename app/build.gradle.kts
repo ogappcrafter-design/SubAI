@@ -29,6 +29,11 @@ android {
             storePassword = "subai123"
             keyAlias = "subai"
             keyPassword = "subai123"
+            // Sign with ALL schemes (v1 JAR + v2 + v3) for maximum install
+            // compatibility — some locked-down installers still check v1 at parse time.
+            enableV1Signing = true
+            enableV2Signing = true
+            enableV3Signing = true
         }
     }
 
