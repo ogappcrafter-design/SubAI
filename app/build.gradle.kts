@@ -34,7 +34,9 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix = ".debug"
+            // No applicationId suffix: one clean package id (com.ogapp.subai) for
+            // all sideload builds, so there's never a "same app, different build"
+            // signature clash when installing updates.
             isDebuggable = true
             signingConfig = signingConfigs.getByName("shared")
         }
