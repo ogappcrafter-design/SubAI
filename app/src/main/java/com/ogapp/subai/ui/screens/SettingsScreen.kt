@@ -1,6 +1,8 @@
 package com.ogapp.subai.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -36,6 +38,7 @@ import com.ogapp.subai.ui.theme.BassCyan
 import com.ogapp.subai.ui.theme.SteelGray
 import com.ogapp.subai.ui.theme.WireGreenOk
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun SettingsScreen(onBack: () -> Unit) {
     val context = LocalContext.current
@@ -54,7 +57,7 @@ fun SettingsScreen(onBack: () -> Unit) {
             )
             Spacer(Modifier.height(14.dp))
             Text("Provider", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            androidx.compose.foundation.layout.Row(
+            FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.padding(vertical = 6.dp)
             ) {
